@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainify - Build Sustainable Habits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Landing Section -->
+  <section class="landing-section" id="landing">
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <div class="landing-content">
+      <div class="logo-circle">
+        <svg class="logo-svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 28 L16 12" stroke-width="2" fill="none" stroke="currentColor" />
+          <path d="M16 16 C16 16, 12 14, 10 10 C8 6, 10 4, 12 4 C14 4, 16 8, 16 12" stroke-width="2" fill="none"
+            stroke="currentColor" />
+          <path d="M16 16 C16 16, 20 14, 22 10 C24 6, 22 4, 20 4 C18 4, 16 8, 16 12" stroke-width="2" fill="none"
+            stroke="currentColor" />
+          <ellipse cx="14" cy="11" rx="1.5" ry="2.5" fill="currentColor" stroke="none" />
+          <ellipse cx="18" cy="11" rx="1.5" ry="2.5" fill="currentColor" stroke="none" />
+          <path d="M12 28 L20 28" stroke-width="2" fill="none" stroke-linecap="round" stroke="currentColor" />
+        </svg>
+      </div>
+
+      <div class="intro-card">
+        <div class="glass-reflection"></div>
+        <h1>Sustainify</h1>
+        <p class="tagline">Build sustainable habits. Track your progress.<br>Make eco-friendly living effortless.</p>
+
+        <div class="features">
+          <div class="feature"><span class="emoji">🌱</span> Daily eco habits</div>
+          <div class="feature"><span class="emoji">📊</span> Track your impact</div>
+          <div class="feature"><span class="emoji">♻️</span> Consistency made simple</div>
+        </div>
+
+        <button class="go-green-btn" onclick="scrollToDashboard()">Go Green →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboard Section -->
+  <section id="dashboard" class="dashboard-section">
+    <!-- Background Orbs -->
+    <div class="dashboard-bg">
+      <div class="bg-orb orb-3"></div>
+      <div class="bg-orb orb-4"></div>
+      <div class="bg-orb orb-5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <div class="nav-overlay"></div>
+      <div class="nav-container">
+        <div class="nav-brand">
+          <div class="brand-icon">
+            <svg class="brand-svg" viewBox="0 0 32 32">
+              <path d="M16 28 L16 12" stroke-width="2" fill="none" stroke="currentColor" />
+              <path d="M16 16 C16 16, 12 14, 10 10 C8 6, 10 4, 12 4 C14 4, 16 8, 16 12" stroke-width="2" fill="none"
+                stroke="currentColor" />
+              <path d="M16 16 C16 16, 20 14, 22 10 C24 6, 22 4, 20 4 C18 4, 16 8, 16 12" stroke-width="2" fill="none"
+                stroke="currentColor" />
+              <ellipse cx="14" cy="11" rx="1.5" ry="2.5" fill="currentColor" stroke="none" />
+              <ellipse cx="18" cy="11" rx="1.5" ry="2.5" fill="currentColor" stroke="none" />
+              <path d="M12 28 L20 28" stroke-width="2" fill="none" stroke-linecap="round" stroke="currentColor" />
+            </svg>
+          </div>
+          <span class="brand-name">Sustainify</span>
+        </div>
+
+        <div class="nav-tabs">
+          <button class="tab-btn active" data-tab="home" onclick="switchTab('home')">Home</button>
+          <button class="tab-btn community-nav-btn" onclick="window.location.href='community.html'">Community</button>
+          <button class="tab-btn" data-tab="history" onclick="switchTab('history')">Habit History</button>
+          <button class="tab-btn" data-tab="achievements" onclick="switchTab('achievements')">Achievements</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+      <!-- Home Tab -->
+      <div id="home-tab" class="tab-content active">
+        <!-- Progress Card -->
+        <div class="progress-card">
+          <div class="glass-reflection"></div>
+          <div class="progress-header">
+            <div class="progress-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div>
+              <h2 class="progress-title">Your Progress</h2>
+              <p class="score-text">Eco Score: <span id="score">0</span>%</p>
+            </div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+          </div>
+          <div class="progress-info">
+            <span id="completed">0</span> of <span id="total">3</span> habits completed today
+          </div>
+        </div>
+
+        <!-- Habits Section -->
+        <h2 class="section-title gradient-green">Daily Eco Habits</h2>
+        <div class="habit-grid" id="habitGrid"></div>
+
+        <!-- Did You Know -->
+        <div class="did-you-know">
+          <div class="section-header">
+            <h2 class="section-title gradient-cyan">Did You Know?</h2>
+            <p>Learn how small actions create big changes</p>
+          </div>
+          <div class="facts-scroll">
+            <div class="facts-track" id="factsTrack">
+              <div class="fact-card">
+                <div class="fact-glow fact-glow-blue"></div>
+                <h3>Water Conservation</h3>
+                <p>Reducing your shower time by just 2 minutes can save up to 10 gallons of water per day. That's 3,650
+                  gallons per year!</p>
+              </div>
+              <div class="fact-card">
+                <div class="fact-glow fact-glow-purple"></div>
+                <h3>Plastic Reduction</h3>
+                <p>A single reusable bag can eliminate the need for over 1,000 plastic bags in its lifetime, preventing
+                  tons of plastic waste.</p>
+              </div>
+              <div class="fact-card">
+                <div class="fact-glow fact-glow-amber"></div>
+                <h3>Energy Efficiency</h3>
+                <p>Unplugging electronics when not in use can reduce your energy bill by up to 10% and prevent
+                  unnecessary carbon emissions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- History Tab -->
+      <div id="history-tab" class="tab-content">
+        <h2 class="section-title gradient-purple">Habit History</h2>
+        <div class="history-grid" id="historyGrid"></div>
+      </div>
+
+      <!-- Achievements Tab -->
+      <div id="achievements-tab" class="tab-content">
+        <h2 class="section-title gradient-amber">Achievements</h2>
+        <div class="achievements-grid" id="achievementsGrid"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" />
+            <path d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+            <path d="M8 12c0 1.5.5 3 1.5 4" />
+            <path d="M16 12c0 1.5-.5 3-1.5 4" />
+          </svg>
+        </div>
+        <h2>Our Mission</h2>
+        <p class="mission-text">
+          We believe that every small action counts. By tracking and celebrating your daily eco-friendly
+          habits, together we can create a sustainable future for our planet and generations to come.
+        </p>
+        <div class="footer-credit">
+          <span>Built with</span>
+          <span class="heart">💚</span>
+          <span>by Cortex Duo</span>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <!-- AI Chatbot -->
+
+
+  <div id="bp-embedded-webchat">
+
+    <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/02/02/10/20260202102711-9OOVBJ49.js" defer></script>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

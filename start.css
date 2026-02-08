@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.intro-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+  background-size: cover;
+  position: relative;
+}
+
+.intro-card {
+  max-width: 360px;
+  text-align: center;
+  padding: 35px 28px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6),
+    inset 0 0 60px rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.intro-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8),
+    inset 0 0 80px rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Logo Container with SVG */
+.logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.logo svg {
+  width: 32px;
+  height: 32px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.intro-card h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 14px 0 22px;
+  line-height: 1.5;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 26px;
+}
+
+.features span {
+  padding: 9px 14px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.features span:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(5px);
+}
+
+.get-started-btn {
+  display: inline-block;
+  padding: 11px 26px;
+  border-radius: 999px;
+  background: #2d7a5a;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(45, 122, 90, 0.4);
+  font-size: 14px;
+}
+
+.get-started-btn:hover {
+  background: #246a4d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(45, 122, 90, 0.5);
+}
+
+@media (max-width: 480px) {
+  .intro-card {
+    max-width: 90%;
+    padding: 30px 24px;
+  }
+
+  .intro-card h1 {
+    font-size: 26px;
+  }
+}
